@@ -14,6 +14,26 @@ Adding few components like:
 - Follow Instructions Here:
  [webpack Quick Start](https://webpack.js.org/guides/installation/)
 
+## Use HTMLWebpackPlugin to export multiple html files from multiple templates
+- [check this solution on github](https://github.com/jantimon/html-webpack-plugin/issues/218#issuecomment-183066602)
+
+-here i create multiple instances from the html plugin
+- filename ==> name of the file that will be exported
+- template ==> is where the content of the html page will come from
+- make sure to not add ``` inject:false ``` because it will prevent adding JS to the page
+```     
+plugins:[
+        new HtmlWebpackPlugin({
+            filename: "template.html",
+            template:"./src/template.htm"
+            
+        }),
+        new HtmlWebpackPlugin({
+            filename: "template2.html",
+            template:"./src/template.htm"
+         }),
+    ],
+``` 
 ## Components URLS
 - [CSS1 - Style Loader](https://webpack.js.org/loaders/style-loader/)
 - [CSS2 - CSS Loader](https://webpack.js.org/loaders/css-loader/)
